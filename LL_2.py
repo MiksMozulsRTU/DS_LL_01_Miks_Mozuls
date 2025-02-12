@@ -21,14 +21,18 @@ class LinkedList:
         self.length += 1
         return True
 
-    # WRITE HAS_LOOP METHOD HERE #
-    #                            #
-    #                            #
-    #                            #
-    #                            #
-    ##############################
-    
-    
+    def has_loop(self):
+        fast = self.head
+        slow = self.head
+
+        while fast != None and fast.next != None: 
+            fast = fast.next.next
+            slow = slow.next
+
+            if(fast == slow):
+                return True 
+            
+        return False
     
     
 my_linked_list_1 = LinkedList(1)
