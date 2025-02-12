@@ -11,6 +11,7 @@ class LinkedList:
         self.tail = new_node
 
         
+        
     def append(self, value):
         new_node = Node(value)
         if self.head == None:
@@ -23,6 +24,21 @@ class LinkedList:
         
 
     # WRITE FIND_MIDDLE_NODE METHOD HERE #
+    def find_middle_node(self):
+        fast = self.head
+        slow = self.head
+        
+        # fast = fast.next.next
+        # slow = slow.next
+        
+        while fast != None and fast.next != None: 
+            
+            slow = slow.next 
+            fast = fast.next.next
+            
+        return slow
+    
+    
     #                                    #
     #                                    #
     #                                    #
